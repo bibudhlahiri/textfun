@@ -32,8 +32,8 @@ class WordFun:
             if length >= n:
                 for i in range(length - n + 1):
                     n_gram = word[i:(i+n)]
-                    if (n_gram[0] in consonants) and (n_gram[1] in consonants):
-                        #print("word = " + word + ", n_gram = " + n_gram)
+                    #if (n_gram[0] in consonants) and (n_gram[1] in consonants):
+                    if all(x in consonants for x in n_gram):
                         if n_gram in self.n_gram_index:
                             wordlist = self.n_gram_index[n_gram]
                             count = self.n_gram_stats[n_gram]
